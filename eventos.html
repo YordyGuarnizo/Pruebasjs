@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Eventos en JavaScript</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            margin: 2rem; 
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .section { 
+            background: white;
+            margin-bottom: 2rem; 
+            padding: 1.5rem; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 { text-align: center; color: #222; }
+        h2 { color: #444; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        input, button, select { 
+            margin-top: 0.5rem; 
+            padding: 0.5rem; 
+            font-size: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover { background-color: #0056b3; }
+        .resultado { 
+            margin-top: 1rem; 
+            font-weight: bold; 
+            color: #0056b3; 
+            min-height: 1.5em; /* Para que no salte el layout cuando esté vacío */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de Eventos y Selección de Elementos</h1>
+
+    <!-- Ejemplo 1: Click -->
+    <div class="section">
+        <h2>1. Evento 'click' y getElementById()</h2>
+        <p>Al hacer clic en el botón, el código JavaScript cambiará el texto de abajo.</p>
+        <button id="btn-click">¡Haz clic aquí!</button>
+        <p id="resultado-click" class="resultado">Texto original (Aún no has hecho clic)</p>
+    </div>
+
+    <!-- Ejemplo 2: Input -->
+    <div class="section">
+        <h2>2. Evento 'input' y querySelector()</h2>
+        <p>El evento <strong>input</strong> se dispara en tiempo real cada vez que escribes, borras o modificas el contenido.</p>
+        <input type="text" id="input-texto" placeholder="Escribe algo aquí...">
+        <p id="resultado-input" class="resultado"></p>
+    </div>
+
+    <!-- Ejemplo 3: Change -->
+    <div class="section">
+        <h2>3. Evento 'change'</h2>
+        <p>El evento <strong>change</strong> se dispara cuando confirmas un cambio. En un select se nota de inmediato al elegir otra opción.</p>
+        <select id="select-opciones">
+            <option value="">Selecciona una opción...</option>
+            <option value="Opción A">Opción A</option>
+            <option value="Opción B">Opción B</option>
+            <option value="Opción C">Opción C</option>
+        </select>
+        <p id="resultado-change" class="resultado"></p>
+    </div>
+
+    <!-- Ejemplo 4: Submit -->
+    <div class="section">
+        <h2>4. Evento 'submit'</h2>
+        <p>El evento <strong>submit</strong> se detecta en el formulario. Usaremos <code>preventDefault()</code> para evitar que la página se recargue.</p>
+        <form id="mi-formulario">
+            <input type="text" id="nombre-form" placeholder="Tu nombre" required>
+            <button type="submit">Enviar Formulario</button>
+        </form>
+        <p id="resultado-submit" class="resultado"></p>
+    </div>
+
+    <!-- Ejemplo 5: Mouseover / Mouseout -->
+    <div class="section">
+        <h2>5. Eventos 'mouseover' y 'mouseout' (Ratón)</h2>
+        <p>Se disparan cuando el puntero del ratón entra (<strong>mouseover</strong>) y sale (<strong>mouseout</strong>) de un elemento.</p>
+        <div id="caja-hover" style="width: 100%; max-width: 300px; height: 100px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 8px; border: 2px dashed #ccc; transition: all 0.3s;">
+            Pasa el ratón por aquí
+        </div>
+        <p id="resultado-hover" class="resultado"></p>
+    </div>
+
+    <!-- Ejemplo 6: Teclado (keydown y keyup) -->
+    <div class="section">
+        <h2>6. Eventos de Teclado ('keydown' y 'keyup')</h2>
+        <p><strong>keydown</strong>: se dispara al presionar una tecla hacia abajo.<br><strong>keyup</strong>: se dispara al soltar la tecla.</p>
+        <input type="text" id="input-teclado" placeholder="Presiona teclas aquí...">
+        <p id="resultado-teclado" class="resultado"></p>
+    </div>
+
+    <!-- Ejemplo 7: Focus y Blur -->
+    <div class="section">
+        <h2>7. Eventos 'focus' y 'blur'</h2>
+        <p><strong>focus</strong>: ocurre cuando un elemento (como un input) recibe la "atención" (cuando haces clic para escribir en él).<br><strong>blur</strong>: ocurre cuando el elemento pierde la atención (haces clic fuera).</p>
+        <input type="text" id="input-focus" placeholder="Haz clic aquí y luego fuera...">
+        <p id="resultado-focus" class="resultado"></p>
+    </div>
+
+    <!-- Enlazamos nuestro archivo JavaScript -->
+    <script src="eventos.js"></script>
+</body>
+</html>
