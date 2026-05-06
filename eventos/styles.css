@@ -1,0 +1,11 @@
+body {
+    margin: 20px;
+    font-family: sans-serif;
+}
+
+#cuadrado {
+    width: 150px;
+    height: 150px;
+    background: lightblue;
+    text-align: center;
+}
