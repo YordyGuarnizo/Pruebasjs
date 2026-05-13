@@ -137,3 +137,124 @@ switch (day) {
 }
 
 */
+
+/* const age = 23;
+
+age >= 18
+  ? console.log("I like to drink water")
+  : console.log("I cannot drink water");
+
+const bill = 55;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+const finalValue = bill + tip;
+
+console.log(`Bill: ${bill}`);
+console.log(`Tip: ${tip}`);
+console.log(`Total: ${finalValue}`);
+*/
+
+/*
+function logger() {
+  console.log("My name is Yordy");
+}
+
+logger();
+
+//Function declaration
+
+function fruitProcessor(apples, oranges) {
+  console.log(apples, oranges);
+  const juice = `Juice with ${apples} apples and ${oranges} oranges`;
+  return juice;
+}
+
+console.log(fruitProcessor(3, 6));
+
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
+}
+
+//Function expression
+
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+//Arrow function
+
+const calcAge3 = (birthYear) => 2037 - birthYear;
+console.log(calcAge3(1990));
+
+//If it has more complex code we need to add the {} and also the return
+//If we have multiple parameters we need to add the ()
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+  return `${firstName} retires in ${retirement} years`;
+};
+
+console.log(yearsUntilRetirement(1990, "Yordy"));
+*/
+
+/*
+function curFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = curFruitPieces(apples);
+  const orangePieces = curFruitPieces(oranges);
+
+  const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges`;
+  return juice;
+}
+*/
+
+function getTheElementValue(value) {
+  return document.getElementById(value).value;
+}
+
+function addition(value1, value2) {
+  return value1 + value2;
+}
+
+function substraction(value1, value2) {
+  return value1 - value2;
+}
+
+function multiplication(value1, value2) {
+  return value1 * value2;
+}
+
+function division(value1, value2) {
+  return value1 / value2;
+}
+
+function printValues(box, value1, value2, value3, value4) {
+  return (document.getElementById(box).innerHTML =
+    `El resultado de ${value1} ${value2} ${value3} es igual a ${value4}`);
+}
+
+function calculate() {
+  const numberOne = parseInt(getTheElementValue("num1"));
+  const numberTwo = parseInt(getTheElementValue("num2"));
+  const operator = getTheElementValue("operacion");
+  let results;
+
+  if (operator === "+") {
+    results = addition(numberOne, numberTwo);
+    printValues("resultado", numberOne, operator, numberTwo, results);
+  } else if (operator === "-") {
+    results = substraction(numberOne, numberTwo);
+    printValues("resultado", numberOne, operator, numberTwo, results);
+  } else if (operator === "*") {
+    results = multiplication(numberOne, numberTwo);
+    printValues("resultado", numberOne, operator, numberTwo, results);
+  } else if (operator === "/" && numberTwo !== 0) {
+    results = division(numberOne, numberTwo);
+    printValues("resultado", numberOne, operator, numberTwo, results);
+  } else {
+    document.getElementById("resultado").innerHTML = "No se puede dividir en 0";
+  }
+}
